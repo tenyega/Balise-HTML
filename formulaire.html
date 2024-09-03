@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/css.css" />
+
+    <title>Formulaire</title>
+</head>
+
+<body>
+
+    <div id='etiquette'>Toto</div>
+
+    <h1 class='titre'>Des balises utiles pour le formulaire</h1>
+
+    <section id="form_sec">
+        <article>
+            <h2 class='titre'>&lt;form&gt;</h2>
+            <div class='definition'>L'élément HTML <b>&lt;form&gt;</b> représente un formulaire, c'est-à-dire une section d'un document qui contient des contrôles interactifs permettant à un utilisateur de fournir des informations.
+            </div>
+            <div class='utilisation'> Pour avoir une formulaire.
+            </div>
+            <div class='code html'>
+                <span class='balise chope'>&lt;form action="" method="get"&gt;</span><br>
+
+                <div class='tab'></div><span class='autreBalise'>&lt;p&gt;</span><br>
+                <div class='tab2'></div><span class='autreBalise'>&lt;label for="name"&gt;</span>Enter your name : <span class='autreBalise'>&lt;&lt;/label&gt;</span><br>
+                <div class='tab2'></div><span class='autreBalise'>&lt;input type="text" name="name" id="name" required&gt;</span><br>
+                <div class='tab'></div><span class='autreBalise'>&lt;/p&gt;</span><br>
+
+                <div class='tab'></div><span class='autreBalise'>&lt;p&gt;</span><br>
+                <div class='tab2'></div><span class='autreBalise'>&lt;label for="email"&gt;</span>Enter your email : <span class='autreBalise'>&lt;/label&gt;</span><br>
+                <div class='tab2'></div><span class='autreBalise'>&lt;input type="email" name="email" id="email" required&gt;</span><br>
+                <div class='tab'></div><span class='autreBalise'>&lt;/p&gt;</span><br>
+
+                <div class='tab'></div><span class='autreBalise'>&lt;p&gt;</span><br>
+                <div class='tab2'></div><span class='autreBalise'>&lt;label &gt;</span><span class='autreBalise'>&lt;/label&gt;</span><br>
+                <div class='tab2'></div><span class='autreBalise'>&lt;input type="submit" value="Subscribe!"&gt;</span><br>
+                <div class='tab'></div><span class='autreBalise'>&lt;/p&gt;</span><br>
+
+                <span class='balise chope'>&lt;/form&gt;</span>
+
+            </div>
+            <div class='exemple'>
+                <form action="" method="post">
+                    <p>
+                        <label for="name">Enter your name :</label>
+                        <input type="text" name="name" id="name" required />
+                    </p>
+                    <p>
+                        <label for="email">Enter your email :</label>
+                        <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
+                    </p>
+                    <p>
+                        <label></label>
+                        <input type="submit" value="Subscribe !" />
+                    </p>
+                </form>
+
+
+            </div>
+        </article>
+
+        <article>
+            <h2 class='titre'>&lt;label&gt;</h2>
+            <div class='definition'>La balise <b>&lt;label&gt;</b> définit une étiquette pour plusieurs éléments. </div>
+            <div class='utilisation'>Les utilisateurs qui ont des difficultés à cliquer sur de très petites régions (comme les cases à cocher) - car lorsqu'un utilisateur clique sur le texte dans l'élément
+                <b>&lt;label&gt;</b> , il fait basculer l'entrée (ce qui augmente la zone touchée).
+                <p>L'attribut <b>for</b> permets de faire un liens entre la balise label et le champs input. </p>
+            </div>
+            <div class='code html'>
+                <span class='autreBalise'>&lt;form action="/action_page.php" &gt;</span> <br>
+
+                <div class='tab'></div>
+                <span class='autreBalise'>&lt;input type="radio" id="html" name="fav_language"
+                    value="HTML"/&gt;</span><br>
+                <div class='tab'></div>
+                <span class='balise chope'>&lt;label for="html" &gt;</span>HTML <span class='balise chope'>&lt;/label&gt;</span><br>
+                <div class='tab'></div>
+                <span class='autreBalise'>&lt;input type="radio" id="css" name="fav_language"
+                    value="CSS"/&gt;</span><br>
+                <div class='tab'></div>
+                <span class='balise chope'>&lt;label for="css"&gt;</span>CSS <span class='balise chope'>&lt;/label&gt;</span><br>
+                <div class='tab'></div>
+                <span class='autreBalise'>&lt;input type="radio" id="javascript" name="fav_language"
+                    value="JavaScript"/&gt;</span><br>
+
+                <div class='tab'></div>
+                <span class='balise chope'>&lt;label for="javascript" &gt;</span>JavaScript<span class='balise chope'>&lt;/label&gt;<br></span>
+                <div class='tab'></div>
+                <span class='autreBalise'>&lt;input type="submit" value="Submit"/&gt;</span><br></span>
+                <span class='autreBalise'>&lt;/form&gt;</span>
+            </div>
+            <!-- <div class='code css'></div> -->
+            <div class='exemple'>
+                <form action="/action_page.php" onsubmit="return afficheLang()">
+                    <input type="radio" id="html" name="fav_language" value="HTML" />
+                    <label for="html">HTML</label><br>
+                    <input type="radio" id="css" name="fav_language" value="CSS" />
+                    <label for="css">CSS</label><br>
+                    <input type="radio" id="javascript" name="fav_language" value="JavaScript" />
+                    <label for="javascript">JavaScript</label><br><br>
+                    <input type="submit" value="Submit" />
+                    <input type="button" value="test" onclick="afficheLang()" />
+                </form>
+                <div class='resultatClick'></div>
+            </div>
+            <script>
+                function afficheLang() {
+                    console.log('afficheLang')
+
+                    // récupérer le index du radio (fav_language) qui est sélectionné.
+                    // let checked_radio = document.getElementById('html').checked;
+                    // if(checked_radio) {
+                    //     alert("Sélection HTML");
+                    // } else {
+                    //     alert("! Sélection HTML");
+                    // }
+                    let lesRadio = document.forms[1].fav_language;
+                    let resultatClick = document.querySelector('.resultatClick');
+
+                    console.log('afficheLang', lesRadio);
+                    lesRadio.forEach(unRadio => {
+                        if (unRadio.checked) {
+                            // ensuite on récupère sa value
+
+                            // on l'affiche
+
+                            resultatClick.innerHTML = "Vous avez selectionnez " + unRadio.value;
+                        } else {
+                            resultatClick.innerHTML = "Selectionnez au moins un option.";
+                        }
+                    });
+
+
+                    return false;
+                }
+            </script>
+        </article>
+
+        <article>
+            <h2 class='titre'>&lt;input&gt;</h2>
+            <div class='definition'>La balise <b>&lt;input&gt;</b> spécifie un champ de saisie dans lequel l'utilisateur peut entrer des données et c'est l'élément de formulaire le plus important.
+            </div>
+            <div class='utilisation'>La balise <b>&lt;input&gt;</b> peut être affiché de plusieurs façons, en fonction de l'attribut type. </div>
+            <div class='code html'>
+                <span class='autreBalise'>&lt;form action="/action_page.php"&gt;</span><br>
+                <span class='autreBalise'><div class='tab'></div>&lt;p&gt;</span><br>
+                <div class='tab2'></div><span class='autreBalise'>&lt;label for="fname"&gt;</span>First name : <span class='autreBalise'>&lt;/label&gt;</span><br>
+                <div class='tab2'></div><span class='balise chope'>&lt;input type="text" name="fname"&gt;</span><br>
+                <span class='autreBalise'><div class='tab'></div>&lt;/p&gt;</span><br>
+
+                <span class='autreBalise'><div class='tab'></div>&lt;p&gt;</span><br>
+                <div class='tab2'></div><span class='autreBalise'>&lt;label for="lname"&gt;</span>Last name : <span class='autreBalise'>&lt;/label&gt;</span><br>
+                <div class='tab2'></div><span class='balise chope'>&lt;input type="text" name="lname"&gt;</span><br>
+                <span class='autreBalise'><div class='tab'></div>&lt;/p&gt;</span><br>
+
+                <span class='autreBalise'><div class='tab'></div>&lt;p&gt;</span><br>
+                <div class='tab2'></div><span class='autreBalise'>&lt;label&gt;</span><span class='autreBalise'>&lt;/label&gt;</span><br>
+                <div class='tab2'></div><span class='balise chope'>&lt;input type="submit" value="Submit"&gt;</span><br>
+                <span class='autreBalise'><div class='tab'></div>&lt;/p&gt;</span><br>
+
+                <span class='autreBalise'>&lt;/form&gt;</span>
+            </div>
+            <div class='code css'>
+                p label {<br>
+                <div class='tab'></div>display: inline-block;<br>
+                <div class='tab'></div>width: 150px;<br>
+                <div class='tab'></div>text-align: right;<br>
+                <div class='tab'></div>margin-right: 5px;<br> }
+                <br>
+
+            </div>
+            <div class='exemple'>
+                <form action="/action_page.php">
+                    <p>
+                        <label for="fname">First name : </label>
+                        <input type="text" name="fname">
+                    </p>
+                    <p>
+                        <label for="lname">Last name : </label>
+                        <input type="text" name="lname">
+                    </p>
+                    <p>
+                        <label></label>
+                        <input type="submit" value="Submit">
+                    </p>
+
+                </form>
+            </div>
+        </article>
+
+        <article>
+            <h2 class='titre'>&lt;input type="password"&gt;</h2>
+            <div class='definition'>Les éléments <b>&lt;input&gt;</b> de type "password" permettent à utilisateur de saisir un mot de passe sans que celui-ci ne soit lisible à l'écran.
+            </div>
+            <div class='utilisation'>Un tel élément se présente comme un contrôle de saisie de texte sur une ligne et dans lequel chaque caractère est remplacé par un symbole (un astérisque ("*") ou un point ("•")) afin que le texte saisi ne puisse être lu. Le caractère utilisé
+                pour obfusquer dépend de l'agent utilisateur (du navigateur) et du système d'exploitation utilisé.</div>
+            <div class='code html'>
+                <span class='autreBalise'>&lt;div&gt;</span><br>
+                <span class='autreBalise'><div class='tab'></div>&lt;p&gt;</span><br>
+                <div class='tab2'></div><span class='autreBalise'>&lt;label for="username"&gt;</span>Username :
+                <span class='autreBalise'>&lt;/label&gt;</span><br>
+                <div class='tab2'></div><span class='balise chope'>&lt;input type="text" id="username" name="username"&gt;</span><br>
+                <span class='autreBalise'><div class='tab'></div>&lt;/p&gt;</span><br>
+                <span class='autreBalise'>&lt;/div&gt;</span><br>
+
+                <span class='autreBalise'>&lt;div&gt;</span><br>
+                <span class='autreBalise'><div class='tab'></div>&lt;p&gt;</span><br>
+                <div class='tab2'></div><span class='autreBalise'>&lt;label for="pass"&gt;</span>Password (8 characters minimum) : <span class='balise'>&lt;/label&gt;</span><br>
+                <div class='tab2'></div><span class='balise chope'>&lt;input type="password" id="pass" name="password"
+                           minlength="8" required&gt;</span><br>
+                <span class='autreBalise'><div class='tab'></div>&lt;/p&gt;</span><br>
+
+                <span class='autreBalise'>&lt;/div&gt;</span><br>
+
+                <span class='autreBalise'>&lt;div&gt;</span><br>
+                <span class='autreBalise'><div class='tab'></div>&lt;p&gt;</span><br>
+                <div class='tab2'></div><span class='autreBalise'>&lt;label&gt;</span><span class='autreBalise'>&lt;/label&gt;</span><br>
+                <div class='tab2'></div><span class='balise chope'>&lt;input type="submit" value="Sign in"&gt;</span><br>
+                <span class='autreBalise'><div class='tab'></div>&lt;/p&gt;</span><br>
+                <span class='autreBalise'>&lt;/div&gt;</span><br>
+
+
+            </div>
+            <div class='code css'>
+                p label {<br>
+                <div class='tab'></div>display: inline-block;<br>
+                <div class='tab'></div>width: 150px;<br>
+                <div class='tab'></div>text-align: right;<br>
+                <div class='tab'></div>margin-right: 5px;<br> }
+            </div>
+
+            <div class='exemple'>
+                <p>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username">
+                </p>
+
+                <p>
+                    <label for="pass">Password (8 characters minimum):</label>
+                    <input type="password" id="pass" name="password" minlength="8" required>
+                </p>
+                <p>
+                    <label></label>
+                    <input type="submit" value="Sign in">
+                </p>
+            </div>
+        </article>
+
+        <article>
+            <h2 class='titre'>&lt;input type="radio"&gt;</h2>
+            <div class='definition'>Les éléments <b>&lt;input&gt;</b> dont l'attribut type vaut radio sont généralement utilisés pour construire des groupes d'options parmi lesquelles on ne peut choisir qu'une valeur. Les « boutons radio » sont représentés par des cercles remplis
+                lorsqu'ils sont sélectionnés.
+            </div>
+            <div class='utilisation'>Un seul bouton radio d'un groupe peut être sélectionné en même temps.
+
+            </div>
+            <div class='code html'>
+                <span class='autreBalise'>&lt;div&gt;</span><br>
+                <div class='tab'></div><span class='balise chope'>&lt;input type="radio" id="huey" name="drone" value="huey"
+                            checked&gt;</span><br>
+                <div class='tab'></div><span class='autreBalise'>&lt;label for="huey"&gt;</span>Huey<span class='autreBalise'>&lt;/label&gt;</span><br>
+                <span class='autreBalise'>&lt;/div&gt;</span><br>
+
+                <span class='autreBalise'>&lt;div&gt;</span><br>
+                <div class='tab'></div><span class='balise chope'>&lt;input type="radio" id="dewey" name="drone" value="dewey"&gt;</span><br>
+                <div class='tab'></div><span class='autreBalise'>&lt;label for="dewey"&gt;</span>Dewey <span class='autreBalise'>&lt;/label&gt;</span><br>
+                <span class='autreBalise'>&lt;/div&gt;</span><br>
+
+                <span class='autreBalise'>&lt;div&gt;</span><br>
+                <div class='tab'></div><span class='balise chope'>&lt;input type="radio" id="louie" name="drone" value="louie"&gt;</span><br>
+                <div class='tab'></div><span class='autreBalise'>&lt;label for="louie"&gt;</span>Louie<span class='autreBalise'>&lt;/label&gt;</span><br>
+                <span class='autreBalise'>&lt;/div&gt;</span><br>
+
+
+            </div>
+            <div class='exemple' style='display:flex;'>
+                <div>
+                    <div>
+                        <input type="radio" id="huey" name="drone" value="huey" />
+                        <label for="huey">Huey</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="dewey" name="drone" value="dewey" />
+                        <label for="dewey">Dewey</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="louie" name="drone" value="louie" />
+                        <label for="louie">Louie</label>
+                    </div>
+                </div>
+
+                <div id='checked_Radio' style='padding:10px;'></div>
+
+            </div>
+            <script>
+                // recuperer le tableau de radio button "drone"
+                let lesRadios = document.querySelectorAll('input[name="drone"]');
+                //console.log(lesRadios);
+
+                //recuperer checked_Radio
+                let checked_Radio = document.querySelector('#checked_Radio');
+                //console.log(checked_Radio);
+
+                // boucler sur le tableau pour verifier le checked radio.
+                lesRadios.forEach(unRadio => {
+
+                    unRadio.addEventListener("click", function(event) {
+                        if (this.checked) {
+                            // si checked 
+                            //recuperer la value de checked radio            
+                            //affiche dans innerhtml de checked_Radio
+
+                            checked_Radio.innerHTML = "Vous avez selectionnez " + this.value;
+                        }
+
+                    });
+                });
+            </script>
+        </article>
+
+        <article>
+            <h2 class='titre'>&lt;input type="checkbox"&gt;</h2>
+            <div class='definition'>Les éléments <b>&lt;input&gt;</b> de type checkbox sont affichés sous la forme de boîtes à cocher qui sont cochées lorsqu'elles sont activées. Elles permettent de sélectionner une ou plusieurs valeurs dans un formulaire.
+            </div>
+            <div class='utilisation'>Plusieurs checkbox peut être sélectionné en même temps.
+            </div>
+            <div class='code html'>
+                <span class='autreBalise'>&lt;div&gt;</span><br>
+                <div class='tab'></div><span class='balise chope'>&lt;input type="checkbox" id="scales" name="scales"
+                            checked&gt;</span><br>
+                <div class='tab'></div><span class='autreBalise'>&lt;label for="scales"&gt;</span>Scales<span class='autreBalise'>&lt;/label&gt;</span><br>
+                <span class='autreBalise'>&lt;/div&gt;</span><br>
+
+                <span class='autreBalise'>&lt;div&gt;</span><br>
+                <div class='tab'></div><span class='balise chope'>&lt;input type="checkbox" id="horns" name="horns"&gt;</span><br>
+                <div class='tab'></div><span class='autreBalise'>&lt;label for="horns"&gt;</span>Horns<span class='autreBalise'>&lt;/label&gt;</span><br>
+                <span class='autreBalise'>&lt;/div&gt;</span><br>
+
+            </div>
+            <div class='exemple'>
+                <div>
+                    <input type="checkbox" id="scales" name="scales" checked>
+                    <label for="scales">Scales</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="horns" name="horns">
+                    <label for="horns">Horns</label>
+                </div>
+
+
+            </div>
+        </article>
+
+        <article>
+            <h2 class='titre'>&lt;input type="button"&gt;</h2>
+            <div class='definition'>Les éléments <b>&lt;input&gt;</b> de type button sont affichés comme des boutons poussoirs qui peuvent être programmés afin de contrôler des fonctionnalités de la page via un gestionnaire d'évènement.
+            </div>
+            <div class='utilisation'> Pour pouvoir declancher un evenement.
+            </div>
+            <div class='code html'>
+                <span class='balise chope'>&lt;input
+                type="button"
+                value="Add to favorites"&gt;</span>
+            </div>
+            <div class='exemple'>
+                <input type="button" value="Add to favorites">
+
+            </div>
+        </article>
+
+        <article>
+            <h2 class='titre'>&lt;select&gt;</h2>
+            <div class='definition'>Les éléments <b>&lt;select&gt;</b> représente un contrôle qui fournit une liste d'options parmi lesquelles l'utilisateur pourra choisir.
+            </div>
+            <div class='utilisation'> Pour avoir une liste d'options.
+            </div>
+            <div class='code html'>
+                <div class='tab'></div><span class='autreBalise'>&lt;label for="pet-select"&gt;</span>Choose a pet : <span class='autreBalise'>&lt;/label&gt;</span><br>
+                <div class='tab'></div><span class='balise chope'>&lt;select name="pets" id="pet-select"&gt;</span><br>
+                <div class='tab2'></div><span class='balise'>&lt;option value=""&gt;</span>--Please choose an option--<span class='balise'>&lt;/option&gt;</span><br>
+                <div class='tab2'></div><span class='balise'>&lt;option value="dog"&gt;</span>Dog<span class='balise'>&lt;/option&gt;</span><br>
+                <div class='tab2'></div><span class='balise'>&lt;option value="cat"&gt;</span>Cat<span class='balise'>&lt;/option&gt;</span><br>
+                <div class='tab2'></div><span class='balise'>&lt;option value="hamster"&gt;</span>Hamster<span class='balise'>&lt;/option&gt;</span><br>
+                <div class='tab'></div><span class='balise chope'>&lt;/select&gt;</span>
+            </div>
+            <div class='exemple' style="display: flex;">
+                <div>
+                    <label for="pet-select">Choose a pet:</label>
+                    <select name="pets" id="pet-select" onchange='afficheItem(this)'>
+                        <option value="">--Please choose an option--</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="hamster">Hamster</option>
+                    </select>
+                </div>
+
+                <div id='selected_Item' style='padding-left:20px;'>
+
+                </div>
+            </div>
+
+            <script>
+                function afficheItem(leSelect) {
+                    let txt = leSelect.options[leSelect.selectedIndex].value;
+                    let selectedItem = document.querySelector('#selected_Item');
+                    selectedItem.innerHTML = txt;
+                }
+            </script>
+
+        </article>
+
+        <article>
+            <h2 class='titre'>&lt;textarea&gt;</h2>
+            <div class='definition'>L'élément HTML <b>&lt;textarea&gt;</b> représente un contrôle qui permet d'éditer du texte sur plusieurs lignes.
+            </div>
+            <div class='utilisation'> Il est utilisée pour définir un contrôle de saisie de texte multi-ligne.
+            </div>
+            <div class='code html'>
+                <span class='autreBalise'>&lt;label for="story"&gt;</span>Raconter votre histoire<span class='autreBalise'>&lt;/label&gt;&lt;br&gt;</span><br>
+                <div class='tab'></div><span class='balise chope'>&lt;textarea id="story" name="story" rows="5" cols="33"&gt;</span><br>C'était une nuit sombre et orageuse...
+                <div class='tab'></div><span class='balise chope'>&lt;/textarea&gt;</span>
+            </div>
+            <div class='exemple'>
+                <label for="story">Raconter votre histoire</label><br>
+                <textarea id="story" name="story" rows="5" cols="33">C'était une nuit sombre et orageuse...</textarea>
+
+            </div>
+        </article>
+    </section>
+
+    <script src='js/etiquette.js'></script>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        div[class^='exemple_'] {
+            margin: 50px 0;
+            background-color: #ccc;
+            position: relative;
+        }
+        
+        div[class^='exemple_'] div[class^='toto_'] {
+            padding: 5px;
+            margin: 5px;
+            background-color: #666;
+            display: inline-block;
+            position: relative;
+        }
+        
+        #out .exemple_1 .toto_2 {
+            /* on peut le déplacer mais il garde son espace (il ne sort PAS du flux)
+            puisqu'il est en position relative */
+            top: 20px;
+        }
+        
+        #out .exemple_2 {
+            position: absolute;
+        }
+        
+        #out .exemple_2 .toto_3 {
+            /* se positionne par rapport au parent s'il est en position relative (ou absolute)
+            libère l'espace qu'il occupait (sort du flux)
+            pourra être déplacé avec top et left */
+            position: absolute;
+            top: 30px;
+            left: 5px;
+        }
+        /* .exemple_2 .toto_3 {
+            position: absolute !important;
+            top: 30px;
+            left:5px;
+        } */
+        
+        #out .exemple_3 .toto_2 {
+            position: fixed;
+            top: 30px;
+            left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='out'></div>
+
+    <script>
+        let out = document.querySelector('#out');
+        let html = "";
+        for (let i = 0; i < 4; i++) {
+            html += "<div class='exemple_" + i + "'>" +
+                "<div class='toto_1'></div>" +
+                "<div class='toto_2'></div>" +
+                "<div class='toto_3'></div>" +
+                "<div class='toto_4'></div>" +
+                "<div class='toto_5'></div>" +
+                "</div>";
+        }
+        out.innerHTML = html;
+
+
+        let num = 0;
+        let lesDivs = document.querySelectorAll('div[class^="exemple_"] div');
+
+        let pas = Math.round(360 / lesDivs.length);
+
+        lesDivs.forEach(element => {
+            element.innerHTML = num;
+            element.style.backgroundColor = "hsl(" + (num++ * pas) + ", 70%, 60%)";
+        });
+    </script>
+
+
+</body>
+
+</html>

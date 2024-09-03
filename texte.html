@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/css.css" />
+
+    <title>Texte</title>
+</head>
+
+<body>
+    <div id='etiquette'>Toto</div>
+
+
+    <h1 class='titre'>Des balises utiles pour le texte</h1>
+
+    <section id="texte_sec">
+
+        <article>
+            <h2 class='titre'>&lt;P&gt;</h2>
+            <div class='definition'>La balise <b>&lt;p&gt;</b> permet de créer un paragraphe.</div>
+            <div class='utilisation'>Les navigateurs ajoutent automatiquement une ligne vierge avant et après
+                chaque balise <b>&lt;p&gt;</b></div>
+            <div class='code html'>
+                <span class='balise chope'>&lt;p&gt;</span>Ceci est du texte dans un paragraphe.
+                <span class='balise chope'>&lt;/p&gt;</span>
+                {# <span class='balise chope' onmouseover="posSouris(event, this)">&lt;/p&gt;</span> #}
+            </div>
+            <!-- <div class='code css'></div> -->
+            <div class='exemple'>Ceci est du texte dans un paragraphe.</div>
+        </article>
+
+        <article class='leSpan'>
+            <h2 class='titre'>&lt;SPAN&gt;</h2>
+            <div class='definition'>La balise <b> &lt;span&gt;</b> à un côté très pratique puisque si elle est insérée
+                au milieu
+                du texte, elle ne provoquera aucun changement dans le flux de texte. Donc pas de décalage, ou de retour
+                à la ligne. (mis à part via du CSS)</div>
+            <div class='utilisation'>Elle pourra être utilsée pour mettre un mot en évidence dans un texte.</div>
+            <div class='code html'>Le mot <span class='balise chope'>&lt;span class='rouge'&gt;</span>rouge<span
+                    class='balise chope'>&lt;/span&gt;</span>, est écrit en <span class='balise chope'>&lt;span
+                    class='rouge'&gt;</span>rouge<span class='balise chope'>&lt;/span&gt;</span>.</div>
+            <div class='code css'>.rouge { color: rgb(255, 0, 0);}</div>
+            <div class='exemple'>Le mot <span class='rouge'>rouge</span>, est écrit en <span class='rouge'>rouge</span>.
+            </div>
+        </article>
+
+        <article>
+            <h2 class='titre'>&lt;br&gt; ou &lt;br /&gt;</h2>
+            <div class='definition'>La balise <b>&lt;br&gt;</b> est une balise sans contenu, ce qui signifie qu'elle n'a
+                pas de balise
+                de fin. Elle insère un saut de ligne. <b>&lt;br&gt;</b> : <b>B</b>roken <b>R</b>ow </div>
+            <div class='utilisation'>La balise <b>&lt;br&gt;</b> est utile pour écrire des adresses ou des poèmes, ou
+                toute action qui demande d'aller à la ligne.</div>
+            <div class='code html'><span class='autreBalise'>&lt;p&gt;</span>Pour forcer <span
+                    class='balise chope'>&lt;br&gt;</span>les sauts de ligne <span class='balise'>&lt;br&gt;</span>dans un
+                texte, <span class='balise chope'>&lt;br&gt;</span> utilisez
+                la balise br <span class='balise chope'>&lt;br&gt;</span>dans un texte.<span
+                    class='autreBalise'>&lt;/p&gt;</span></div>
+            <!-- <div class='code css'></div> -->
+            <div class='exemple'>Pour forcer<br>sauts de ligne<br>dans un texte,<br>utilisez la balise br <br>dans un
+                texte.
+            </div>
+        </article>
+
+        <article>
+            <h2 class='titre'>&lt;hr&gt;</h2>
+            <div class='definition'>La balise <b>&lt;hr&gt;</b> définit une rupture thématique dans une page HTML en
+                traçant une ligne horziontale.
+                <br><b>&lt;hr&gt;</b> : <b>H</b>orizontal <b>R</b>ow
+            </div>
+            <div class='utilisation'>La balise <b>&lt;hr&gt;</b> est le plus souvent présenté comme une règle
+                horizontale
+                utilisée pour séparer le contenu (ou définir un changement) dans une page HTML.<b>&lt;p&gt;</b></div>
+            <div class='code html'><span class='autreBalise'>&lt;h1&gt;</span> Les principaux langages du Web <span
+                    class='autreBalise'>&lt;/h1&gt;</span><br>
+                <span class='balise chope'>&lt;hr&gt;</span><br> <span class='autreBalise'>&lt;p&gt;</span> C'est du texte
+                dans un paragraphe. <span class='autreBalise'>&lt;/p&gt;</span><br>
+                <span class='balise chope'>&lt;hr&gt;</span><br> <span class='autreBalise'>&lt;p&gt;</span> C'est du texte
+                dans un paragraphe. <span class='autreBalise'>&lt;/p&gt;</span>
+            </div>
+            <!-- <div class='code css'></div> -->
+            <div class='exemple'>
+                <h1>Les principaux langages du Web</h1>
+                <hr>
+                <p>C'est du texte dans un paragraphe.</p>
+                <hr>
+                <p>C'est du texte dans un paragraphe.</p>
+            </div>
+        </article>
+
+        <article>
+            <h2 class='titre'>&lt;b&gt;</h2>
+            <div class='definition'>La balise <b>&lt;b&gt;</b> spécifie le texte en gras.
+            </div>
+            <div class='utilisation'>La balise <b>&lt;b&gt;</b>est utilisé pour rendre le texte en gras </div>
+            <div class='code html'> <span class='autreBalise'>&lt;p&gt;</span> Ceci est du texte normal, <span
+                    class='balise chope'>&lt;b&gt;</span>et ceci
+                est du texte en gras<span class='balise chope'>&lt;/b&gt;</span>. <span class='autreBalise'>&lt;/p&gt;</span>
+            </div>
+            <!-- <div class='code css'></div> -->
+            <div class='exemple'>
+                <p>Ceci est du texte normal, <b>et ceci est du texte en gras</b>.</p>
+            </div>
+        </article>
+
+        <article>
+            <h2 class='titre'>&lt;h1&gt; à &lt;h6&gt;</h2>
+            <div class='definition'>La balise HTML <b>&lt;h1&gt;</b> à <b>&lt;h6&gt;</b> est utilisée pour définir les
+                titres dans un
+                document HTML.<br><b>&lt;h1&gt;</b> définit le plus grand titre et <b>&lt;h6&gt;</b> le plus petit.
+            </div>
+            <div class='utilisation'>N'utilisez qu'un seul <b>&lt;h1&gt;</b> par page - celui-ci doit représenter le
+                titre/sujet principal de toute la page. <br>Evitez de sautez des niveaux de titre ; commencez par
+                <b>&lt;h1&gt;</b>, puis utilisez <b>&lt;h2&gt;</b>, et ainsi de suite.
+            </div>
+            <div class='code html'>
+                <span class='balise chope'>&lt;h1&gt;</span>C'est entête 1<span class='balise'>&lt;/h1&gt;</span><br>
+                <span class='balise chope'>&lt;h2&gt;</span>C'est entête 2<span class='balise'>&lt;/h2&gt;</span><br>
+                <span class='balise chope'>&lt;h3&gt;</span>C'est entête 3<span class='balise'>&lt;/h3&gt;</span><br>
+                <span class='balise chope'>&lt;h4&gt;</span>C'est entête 4<span class='balise'>&lt;/h4&gt;</span><br>
+                <span class='balise chope'>&lt;h5&gt;</span>C'est entête 5<span class='balise'>&lt;/h5&gt;</span><br>
+                <span class='balise chope'>&lt;h6&gt;</span>C'est entête 6<span class='balise'>&lt;/h6&gt;</span><br>
+            </div>
+            <!-- <div class='code css'></div> -->
+            <div class='exemple'>
+                <h1>C'est entête 1</h1>
+                <h2>C'est entête 2</h2>
+                <h3>C'est entête 3</h3>
+                <h4>C'est entête 4</h4>
+                <h5>C'est entête 5</h5>
+                <h6>C'est entête 6</h6>
+            </div>
+        </article>
+    </section>
+  
+  <script src='js/etiquette.js'></script>
+
+</body>
+
+</html>

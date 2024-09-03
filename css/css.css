@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+/* #texte_sec */
+#etiquette {
+    position:absolute;
+    padding: 5px;
+    background-color: #ccc;
+    color: #800;
+    z-index: 10;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.448);
+    border-radius: 2px;
+    display:none;
+}
+
+section {
+    background-color: rgb(44, 44, 44);
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.exemple section {
+    background-color: #800;
+}
+
+section#form_sec > article {
+    max-width: 600px;
+}
+h1 {
+    font-size: 2em;
+    line-height: 0em;
+}
+h1.titre,h2.titre {
+    font-variant: small-caps;
+    letter-spacing: 2px;
+}
+h2.titre {
+    text-align: center;
+    color:#000;
+    font-family: 'Courier New', Courier, monospace;
+}
+article {
+    background-color: rgb(220, 209, 245);
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #000;
+    max-width: 400px;
+}
+
+article > div {
+    background-color: rgb(238, 238, 238);
+    padding: 5px;
+    margin: 15px 0;
+    position: relative;
+}
+
+/* -------------------------------- */
+.rouge {
+    color: rgb(255, 0, 0);
+}
+.balise {
+    color: rgb(21, 251, 255);
+}
+.autreBalise {
+    color: rgb(106, 151, 219);
+}
+.chope {
+    cursor: pointer;
+}
+/* -------------------------------- */
+.definition {
+    font-size: 1.2em;
+    padding: 15px 5px 5px 5px;
+
+}
+.definition::before,.html::before, .css::before {
+    position: absolute;
+    top:-8px;
+    left:5px;
+    padding: 2px;
+    background-color: #fff;
+    color:#800;
+    border-radius: 3px;
+}
+.definition::before{
+    content: "Définition";
+    background-color: #800;
+    color:#fff;
+}
+.html::before{
+    content: "HTML";
+}
+ .css::before{
+    content: "CSS";
+}
+.utilisation::before{
+    content: "NB : ";
+    font-weight: bold;
+}
+
+.exemple {
+    background-color: #fff;
+}
+
+.code {
+    background-color: #000;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(224, 169, 66);
+    padding: 15px 5px 5px 5px;
+}
+/* FORMULAIRE */
+p label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+    margin-right: 5px;
+}
+
+div.tab {
+    display: inline-block;
+    width:23px;
+}
+div.tab2 {
+    display: inline-block;
+    width:46px;
+}
+
+div .resultatClick{
+    padding: 5px;
+    display: inline-block;
+    color: #800;
+}

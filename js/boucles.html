@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boucles</title>
+    <style>
+        .rouge {
+            color: red;
+        }
+        /* je sélectionne toutes les divs, qui ont la class qui commence par toto_
+        https://www.w3.org/Style/css3-selectors-updates/WD-css3-selectors-20010126.fr.html */
+        
+        div[class^='toto_'] {
+            padding: 5px;
+            margin: 5px;
+            background-color: #666;
+            display: inline-block;
+            position: relative;
+        }
+        
+        div[class^='toto_']::before {
+            position: absolute;
+            content: '5';
+            top: -8px;
+            right: -8px;
+            font-size: 0.8em;
+            color: black;
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 1px 4px;
+            border: 1px #800 solid;
+        }
+        
+        ul.listeFruits li:nth-child(2) {
+            background-color: #0f0;
+            font-size: 2em;
+        }
+        
+        div.lesParas p:nth-child(odd) {
+            background-color: #00f;
+        }
+        
+        div.lesParas p:nth-child(even) {
+            background-color: #0f0;
+        }
+        
+        .prix::after {
+            content: '€';
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#" onclick="enleveClass();">Enlève la class</a>
+
+    <div class='toto_1'>AAA</div>
+    <div class='toto_2'>AAA</div>
+    <div class='toto_3'>AAA</div>
+    <div class='toto_4'>AAA</div>
+    <div class='toto_5'>AAA</div>
+
+    <div class='lesParas'>
+        <p class='para_1'>PPP</p>
+        <p class='para_2'>PPP</p>
+        <p class='para_3'>PPP</p>
+        <p class='para_4'>PPP</p>
+        <p class='para_5'>PPP</p>
+    </div>
+
+    <div id='out'></div>
+
+    <p class='prix'>125.57</p>
+
+    <script>
+        let out = document.querySelector('#out');
+        //                  0          1        2
+        let fruits_nom = ["Pommes", "Poires", "Bananes", "Kakis"];
+        // ajoute à la fin du tableau
+        fruits_nom.push('Raisin');
+
+        // le maximum de la boucle se réfère à la taille du tableau.
+        // via la propriété .length
+
+        let html = "<ul class='listeFruits'>";
+        for (let i = 0; i < fruits_nom.length; i++) {
+            html += "<li>" + fruits_nom[i] + "</li>";
+        }
+        html += "</ul>";
+        out.innerHTML = html;
+
+        //------------------------
+        // < select >
+        //     <option value='-1'>Choisissez un fruit</option>
+
+        //     <option value='0'>Pommes</option>
+        //     <option value='1'>Poires</option>
+        //     <option value='2'>Bananes</option>
+
+        // </select > 
+
+        // génération d'une balise <select>
+        html = "<select name='fruits'>";
+        html += "<option value='-1'>Choisissez un fruit</option>";
+
+        for (let i = 0; i < fruits_nom.length; i++) {
+            html += "<option value='" + i + "'>" + fruits_nom[i] + "</option>";
+        }
+        html += "</select>";
+        out.innerHTML += html;
+
+        // ALL
+        // je sélectionne toutes les divs qui ont la class qui commence par toto_
+        let lesDivs = document.querySelectorAll("div[class^='toto_']");
+        console.log(lesDivs);
+
+        // je boucle sur chaque div une à une.
+        lesDivs.forEach(uneDiv => {
+            // pour chaque div (uneDiv) je change la couleur du texte.
+            uneDiv.style.color = "#0f0";
+        });
+
+        // paragraphe
+        let lesParas = document.querySelectorAll("p[class^='para_']");
+        console.log(lesParas);
+
+        // je boucle sur chaque div une à une.
+        lesParas.forEach(unPara => {
+            // pour chaque div (uneDiv) je change la couleur du texte.
+            // unPara.style.color = "#880";
+
+            // on affecte une class au paragraphe
+            unPara.classList.add('rouge');
+        });
+
+        function enleveClass() {
+            lesParas.forEach(unPara => {
+                unPara.classList.remove('rouge');
+            });
+        }
+    </script>
+
+    <!-- <div class='lesParas'>
+    <p class='para_1'>PPP</p>
+    <p class='para_2'>PPP</p>
+    <p class='para_3'>PPP</p>
+    <p class='para_4'>PPP</p>
+    <p class='para_5'>PPP</p>
+</div> -->
+
+</body>
+
+</html>

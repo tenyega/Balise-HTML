@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/css.css" />
+
+    <title>Lien, liste et menu</title>
+</head>
+
+<body>
+    <div id='etiquette'>Toto</div>
+
+    <section id="nav_sec">
+
+        <article>
+            <h2 class='titre'>&lt;nav&gt;</h2>
+            <div class='definition'>L'élément HTML <b>&lt;nav&gt;</b> représente une section d'une page ayant des liens vers d'autres pages ou des fragments de cette page. Autrement dit, c'est une section destinée à la navigation dans un document (avec des menus, des tables
+                des matières, des index, etc.).
+            </div>
+            <div class='utilisation'>Tous les liens d'un document ne doivent pas faire partie d'un élément
+                <b>&lt;nav&gt;</b>. Ce dernier est fait pour créer des blocs conséquents contenants des liens de navigations au sein du document. L'élément &lt;footer&gt; possède souvent différents liens, il n'a pour autant pas besoin d'être dans un élément
+                <b>&lt;nav&gt;</b>.
+            </div>
+            <div class='code html'>
+                <span class='balise chope'>&lt;nav&gt;</span><br>
+                <div class='tab'></div><span class='autreBalise'>&lt;ol&gt;</span><br>
+                <div class='tab2'></div><span class='autreBalise'>&lt;li&gt;</span><span class='autreBalise'>&lt;a
+                    href="#"&gt;</span>Bikes<span class='autreBalise'>&lt;/a&gt;</span><span class='autreBalise'>&lt;/li&gt;</span><br>
+                <div class='tab2'></div><span class='autreBalise'>&lt;li&gt;</span><span class='autreBalise'>&lt;a
+                    href="#"&gt;</span>BMX<span class='autreBalise'>&lt;/a&gt;</span><span class='autreBalise'>&lt;/li&gt;</span><br>
+                <div class='tab2'></div><span class='autreBalise'>&lt;li&gt;</span>Jump Bike 3000<span class='autreBalise'>&lt;/li&gt;</span><br>
+                <div class='tab'></div><span class='autreBalise'>&lt;/ol&gt;</span><br>
+                <span class='balise chope'>&lt;/nav&gt;</span><br>
+
+                <span class='autreBalise'>&lt;h1&gt;</span>Jump Bike 3000<span class='autreBalise'>&lt;/h1&gt;</span>
+            </div>
+
+            <style>
+                .exemple>nav>ol {
+                    list-style-type: none;
+                }
+                
+                .exemple>nav>ol>li {
+                    display: inline-block;
+                }
+                
+                .exemple>nav>ol>li a::after {
+                    display: inline-block;
+                    color: #000;
+                    content: '>';
+                    font-size: 80%;
+                    font-weight: bold;
+                    padding: 0 3px;
+                }
+            </style>
+
+            <div class='code css'>
+                .exemple ol {<br>
+                <div class='tab'></div>list-style-type: none;<br> }
+                <br> .exemple ol li {<br>
+                <div class='tab'></div>display: inline-block;<br> }
+                <br> .exemple ol li a::after {<br>
+                <div class='tab'></div>display: inline-block;<br>
+                <div class='tab'></div>color: #000;<br>
+                <div class='tab'></div>content: '>';<br>
+                <div class='tab'></div>font-size: 80%;<br>
+                <div class='tab'></div>font-weight: bold;<br>
+                <div class='tab'></div>padding: 0 3px;<br> }
+                <br>
+
+            </div>
+            <div class='exemple'>
+                <nav>
+                    <ol>
+                        <li><a href="#">Bikes</a></li>
+                        <li><a href="#">BMX</a></li>
+                        <li>Jump Bike 3000</li>
+                    </ol>
+                </nav>
+
+                <h1>Jump Bike 3000</h1>
+            </div>
+        </article>
+
+        <article>
+            <h2 class='titre'>&lt;ul&gt;,&lt;ol&gt;,&lt;li&gt;</h2>
+            <div class='definition'>Les éléments HTML <b>&lt;ul&gt;</b>,<b>&lt;ol&gt;</b> et
+                <b>&lt;li&gt;</b>représentent une liste d'éléments sans ordre particulier. <b>&lt;ul&gt;</b> est souvent représenté par une liste à puces.L'élément HTML <b>&lt;ol&gt;</b> représente une liste ordonnée.
+            </div>
+            <div class='utilisation'>L'élément <b>&lt;ul&gt;</b> doit être utilisé pour regrouper plusieurs éléments qui n'ont pas de relation d'ordre. Si on hésite entre <b>&lt;ol&gt;</b> et <b>&lt;ul&gt;</b>, on se demandera si changer l'ordre des éléments de la liste a un
+                impact : si le déplacement d'un élément change la signification, cela signifie que l'ordre est important et qu'il faudra utiliser
+                <b>&lt;ol&gt;</b>, sinon l'ordre n'importe pas et <b>&lt;ul&gt;</b> peut être utilisé.<br> L'élément HTML <b>&lt;li&gt;</b> est utilisé pour représenter un élément dans une liste. Il doit être contenu dans un élément parent : une liste
+                ordonnée (<b>&lt;ol&gt;</b>), une liste non ordonnée (
+                <b>&lt;ul&gt;</b>) ou un menu (&lt;menu&gt;). Dans les menus et les listes non ordonnées, les éléments de liste sont habituellement affichés en utilisant des puces. Dans les listes ordonnées, ils sont habituellement affichés avec compteur
+                croissant à gauche, tel qu'un nombre ou une lettre.
+            </div>
+            <div class='code html'>
+                <span class='balise chope'>&lt;ul&gt;</span><br>
+                <div class='tab'></div><span class='balise chope'>&lt;li&gt;</span>Milk<span class='balise chope'>&lt;/li&gt;</span><br>
+                <div class='tab'></div><span class='balise chope'>&lt;li&gt;</span>Cheese<br>
+                <div class='tab'></div><span class='balise chope'>&lt;ul&gt;</span><br>
+                <div class='tab2'></div><span class='balise chope'>&lt;li&gt;</span>Blue cheese<span class='balise chope'>&lt;/li&gt;</span><br>
+                <div class='tab2'></div><span class='balise chope'>&lt;li&gt;</span>Feta<span class='balise chope'>&lt;/li&gt;</span><br>
+                <div class='tab'></div><span class='balise chope'>&lt;/ul&gt;</span><br>
+                <div class='tab'></div><span class='balise chope'>&lt;/li&gt;</span><br>
+                <span class='balise chope'>&lt;/ul&gt;</span><br>
+
+
+                <span class='balise chope'>&lt;ol&gt;</span><br>
+                <div class="tab"></div><span class='balise chope'>&lt;li&gt;</span>flour, baking powder, sugar, and salt.
+                <span class='balise chope'>&lt;/li&gt;</span><br>
+                <div class="tab"></div><span class='balise chope'>&lt;li&gt;</span>In another bowl, mix eggs, milk, and oil.
+                <span class='balise chope'>&lt;/li&gt;</span><br>
+                <div class="tab"></div><span class='balise chope'>&lt;li&gt;</span>Stir both mixtures together.<span class='balise chope'>&lt;/li&gt;</span><br>
+                <span class='balise chope'>&lt;/ol&gt;</span><br>
+            </div>
+
+
+            <!-- <div class='code css'> </div> -->
+
+            <div class='exemple'>
+                <ul>
+                    <li>Milk</li>
+                    <li>Cheese
+                        <ul>
+                            <li>Blue cheese</li>
+                            <li>Feta</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ol>
+                    <li>Mix flour, baking powder, sugar, and salt.</li>
+                    <li>In another bowl, mix eggs, milk, and oil.</li>
+                    <li>Stir both mixtures together.</li>
+                </ol>
+            </div>
+        </article>
+
+        <article>
+            <h2 class='titre'>&lt;a&gt;</h2>
+            <div class='definition'>L'élément HTML <b>&lt;a&gt;</b> (pour ancre ou anchor en anglais), avec son attribut href, crée un lien hypertexte vers des pages web, des fichiers, des adresses e-mail, des emplacements se trouvant dans la même page, ou tout ce qu'une URL
+                peut adresser. Le contenu de chaque élément <b>&lt;a&gt;</b> doit indiquer la destination du lien.
+            </div>
+            <div class='utilisation'>La balise <b>&lt;a&gt;</b> est utiliser pour creer les liens. Vous pouvez utiliser href="#top" pour créer un lien dans la page actuelle avec un id= top.
+            </div>
+            <div class='code html'>
+
+                <span class='autreBalise'>&lt;p&gt;</span>You can reach Michael at : <span class='autreBalise'>&lt;/p&gt;</span>
+
+                <span class='autreBalise'>&lt;ul&gt;</span><br>
+                <div class='tab'></div><span class='autreBalise'>&lt;li&gt;</span><span class='balise chope'>&lt;a href="https://example.com"&gt;</span>Site<span class='balise chope'>&lt;/a&gt;</span><span class='autreBalise'>&lt;/li&gt;</span><br>
+                <div class='tab'></div><span class='autreBalise'>&lt;li&gt;</span><span class='balise chope'>&lt;a href="mailto:mh@toto.fr"&gt;</span>Email<span class='balise chope'>&lt;/a&gt;</span><span class='autreBalise'>&lt;/li&gt;</span><br>
+                <div class='tab'></div><span class='autreBalise'>&lt;li&gt;</span><span class='balise chope'>&lt;a href="tel:+123456789"&gt;</span>Phone<span class='balise chope'>&lt;/a&gt;</span>
+                <span class='autreBalise'>&lt;/li&gt;</span> &lt;/ul&gt;
+
+            </div>
+
+
+
+            <!--<div class='code css'></div>-->
+            <div class='exemple'>
+                <p>You can reach Michael at:</p>
+
+                <ul>
+                    <li><a href="https://example.com">Site</a></li>
+                    <li><a href="mailto:mh@toto.fr">Email</a></li>
+                    <li><a href="tel:+123456789">Phone</a></li>
+                </ul>
+            </div>
+        </article>
+
+    </section>
+    <script src='js/etiquette.js'></script>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/css.css" />
+
+    <title>Image</title>
+
+    <style>
+        body {
+            background-color: #ccc;
+        }
+        
+        .lesRadiosDeSelection label {
+            margin: 0 5px;
+        }
+        
+        .lesRadiosDeSelection label img {
+            border: 2px #fff solid;
+        }
+        
+        .ihm_top {
+            display: flex;
+            margin-top: 30px;
+        }
+        
+        .ihm_range {
+            margin-left: 15px;
+        }
+        
+        .globale {
+            display: flex;
+            background-color: aquamarine;
+            flex-wrap: wrap;
+        }
+        
+        #lesImages {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        img.uneImage {
+            border: 5px #f0f solid;
+            width: 100px;
+            height: auto;
+        }
+        
+        div[class^='div_'] {
+            width: 200px;
+            height: 200px;
+            transform: translateX(-50%);
+            position: absolute;
+            left: 50%;
+            padding: 50px;
+            margin: 5px;
+            border: 1px #000 solid;
+            background-image: url(img/mer_1024.jpg);
+            background-repeat: no-repeat;
+            /* display: none;
+            /* background-size: 10% 200%; */
+            /* background-image: url(img/pixBlanc50.png); */
+        }
+        /* <input type="radio" id="R_' + i + '" name="img" value="' + i + '" /> */
+        /* input[id^='R_']{ */
+        
+        input[name="img"] {
+            display: none;
+        }
+    </style>
+
+    <script src="js/images.js" type="text/javascript"></script>
+
+</head>
+
+<body onload="init();">
+
+    <h1>Les images</h1>
+
+    <div class='ihm_top'>
+
+        <span class='lesRadiosDeSelection'></span>
+
+        <div class='ihm_range'>
+            pos X
+            <input type='range' onchange='posX_fx(this);' onmousemove='posXMove_fx(this);' onmousedown='msDown_posX(true);' onmouseup='msDown_posX(false);'><span></span><br> pos Y
+            <input type='range' name='rangePosY'><span></span><br><br> Echelle
+
+            <input type='range' onchange='posEchelle(this);' onmousemove='posEchelle(this);' min="40" max="200" value="100"><span></span><br><br>
+        </div>
+    </div>
+
+    <div class='globale'>
+        <!-- <img class='uneImage ' src='img/cuirRouge.png ' alt="Nos derniers vetements en cuirs Rouge" /> -->
+
+        <div id='lesImages'>
+            <!-- <div class='div_1 '>1</div>
+            <div class='div_2 '>2</div>
+            <div class='div_3 '>3</div>
+            <div class='div_4 '>4</div>
+            <div class='div_5 '>5</div> -->
+        </div>
+    </div>
+
+    <!-- <script>
+         init();
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explication Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            /* margin: 0;
+            padding: 0; */
+        }
+        
+         :root {
+            --bgcol-menu: #a01ccf;
+            --fontcolor: #858473;
+            --bgcol-pre: #cbd1d2;
+            --stabilo: #0072CC;
+            --lien: #fff;
+            --defaultFontcolor: rgb(0, 0, 0);
+            --disabledfont: rgba(0, 0, 0, 0.5);
+            --headerh3font: #857381;
+            --descriptionfont: #D1CE82;
+            --headerh1font: #8A4D43;
+            --header: #011CCC;
+            --marge: 10px;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--defaultFontcolor);
+            font-size: 12px;
+        }
+    </style>
+
+
+    <style>
+        #navcontainer ul {
+            padding-left: 0;
+            white-space: nowrap;
+        }
+        
+        #navcontainer ul li {
+            display: inline;
+            list-style-type: none;
+        }
+        
+        #navcontainer ul a {
+            padding: 3px 10px;
+        }
+        
+        #navcontainer ul a:link,
+        #navcontainer ul a:visited {
+            color: var(--lien);
+            background-color: var(--bgcol-menu);
+            text-decoration: none;
+            border: 1px var(--lien) solid;
+        }
+        
+        #navcontainer ul a:hover {
+            color: var(--bgcol-menu);
+            background-color: var(--lien);
+            text-decoration: none;
+            border: 1px #000 solid;
+        }
+    </style>
+
+    <style>
+        section:hover {
+            /* background-color: #ccc; */
+        }
+        
+        section.menu {
+            width: 400px;
+        }
+        
+        section.menu>h1 {
+            color: var(--header);
+            font-weight: bold;
+            font-variant: small-caps;
+            font-size: 3.5em;
+            margin-left: 30px;
+            margin-top: 19px;
+            letter-spacing: 15px;
+            display: inline-block;
+            border-bottom: 1px solid var(--header);
+            text-decoration-color: #b1c9db;
+        }
+        
+        section.menu #navcontainer {
+            font-size: 2em;
+            margin-left: 30px;
+            margin-top: -25px;
+        }
+        
+        .stabilo {
+            color: var(--stabilo);
+        }
+        
+        .stabilo.three {
+            color: var(--stabilo);
+            line-height: 0;
+        }
+        
+        pre {
+            margin: 0px 5px 15px 5px;
+            background-color: var(--bgcol-pre);
+            border: 1px #fff solid;
+            border-radius: 10px;
+            padding: 5px 20px 5px 5px;
+        }
+        
+        pre .moinsFonce {
+            color: var(--disabledfont);
+        }
+        
+        .detail .conteneurExplication {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .detail .conteneurExplication .gauche {
+            padding: 5px;
+        }
+        /* .conteneurExplication .gauche */
+        
+        .detail h3 {
+            font-weight: bold;
+            font-size: 2em;
+            font-variant: small-caps;
+            color: var(--headerh3font);
+            margin: 0px;
+            margin-top: 25px;
+        }
+        
+        .detail .conteneurExplication.premier .droite h5 {
+            font-weight: bold;
+            font-size: 1.8em;
+            font-variant: small-caps;
+            margin-bottom: 0px;
+            margin-top: 60px;
+            /* text-decoration: underline; */
+            display: inline-block;
+            border-bottom: 1px solid var(--headerh3font);
+            color: var(--headerh3font);
+        }
+        
+        .detail .conteneurExplication .droite h5 {
+            font-weight: bold;
+            font-size: 1.8em;
+            font-variant: small-caps;
+            margin-bottom: 0px;
+            margin-top: -29px;
+            /* text-decoration: underline; */
+            display: inline-block;
+            border-bottom: 1px solid var(--headerh3font);
+            color: var(--headerh3font);
+        }
+        
+        .detail .conteneurExplication .droite {
+            padding: 5px;
+            margin-top: 11px;
+        }
+        
+        .detail .conteneurExplication .droite p {
+            margin-top: 15px;
+            font-size: 1.3em;
+        }
+        
+        .codeDeBase {
+            background-color: rgba(200, 200, 200, 0.4);
+            border-radius: 10px;
+            border-top-right-radius: 0;
+            position: fixed;
+            padding: var(--marge);
+            top: 0px;
+            right: 0px;
+        }
+        
+        .codeDeBase>h1 {
+            color: var(--headerh1font);
+            text-align: center;
+        }
+    </style>
+    <!-- media query -->
+    <style>
+        /* inférieur à 480px */
+        
+        @media screen and (max-device-width: 480px) {
+            body {
+                background-color: #b87ee7;
+            }
+        }
+        /* entre 480px et 800px */
+        
+        @media screen and (min-width:480px) and (max-width: 800px) {
+            body {
+                background-color: #757575;
+                font-size: .8em;
+            }
+            .detail .conteneurExplication .gauche {
+                padding: 1px;
+            }
+            pre {
+                margin: 0px 2px 8px 2px;
+                border-radius: 3px;
+                padding: 2px 10px 2px 2px;
+            }
+        }
+        
+        @media screen and (min-width: 800px) and (max-width: 1024px) {
+            body {
+                background-color: #ccbe00;
+            }
+        }
+        
+        @media screen and (min-width: 1024px) and (max-width: 1280px) {
+            body {
+                background-color: #0072CC;
+            }
+            .detail .conteneurExplication .droite p {
+                column-count: 2;
+                column-gap: 15px;
+            }
+        }
+        
+        @media screen and (min-width: 1280px) {
+            body {
+                background-color: #07cc00;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class='codeDeBase'>
+        <h1>Code HTML du menu</h1>
+
+        <pre>
+            <code>
+        &lt;nav id="navcontainer"&gt;
+            &lt;ul&gt;
+                &lt;li class="active"&gt;&lt;a href="#"&gt;Item one&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Item two&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Item three&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;</code> 
+            </pre>
+    </div>
+
+    <section class='menu'>
+        <h1>Le menu</h1>
+        <nav id="navcontainer">
+            <ul>
+                <li class="active"><a href="#">Item one</a></li>
+                <li><a href="#">Item two</a></li>
+                <li><a href="#">Item three</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class='detail'>
+        <div>
+
+            <div class='conteneurExplication premier'>
+
+                <div class='gauche'>
+
+                    <h3>1. Créer une balise nav avec un id</h3><br>
+                    <pre>
+                    <code>     
+    <span class='stabilo'>&lt;nav id="navcontainer"&gt;</span>
+        <span class='moinsFonce'>&lt;ul&gt; 
+            &lt;li class="active"&gt;&lt;a href="#"&gt;Item one&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Item two&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Item three&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;</span>
+    <span class='stabilo'>&lt;/nav&gt;</span></code>
+                </pre>
+                </div>
+
+                <div class='droite'>
+                    <h5>Explication&nbsp;</h5>
+                    <p>
+                        Dans cette étape, une balise nav est créée dans laquelle id navcontainer est assigné pour appliquer un CSS spécifiques uniquement à cette balise nav.
+                    </p>
+                </div>
+            </div>
+
+            <h3>2. Créer une liste avec un ul et des li contenant les liens href avec la balise a.</h3>
+            <div class='conteneurExplication'>
+                <div class='gauche'>
+
+
+                    <pre>
+<code>     
+    <span class='moinsFonce'>&lt;nav id="navcontainer"&gt;</span>
+        <span class='stabilo'>
+        &lt;ul&gt;
+            &lt;li class="active"&gt;&lt;a href="#"&gt;Item one&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Item two&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Item three&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        </span>
+    <span class='moinsFonce'>&lt;/nav&gt;</span>
+</code> 
+                    </pre>
+
+                </div>
+
+                <div class='droite'>
+                    <h5>Explication&nbsp;</h5>
+                    <p>
+                        Dans cette étape une balise &lt;ul&gt; est crée avec les liste de balise &lt;li&gt; dans la quel on mets nos balise &lt;a&gt; pour pouvoir avoir un lien.
+                    </p>
+                </div>
+
+            </div>
+            <h3>3. La première balise &lt;li&gt; est attribuer la classe active dans notre html.</h3><br>
+            <div class='conteneurExplication'>
+                <div class='gauche'>
+
+                    <pre>
+    <code>     
+    <span class='moinsFonce'>  &lt;nav id="navcontainer"&gt;</span>
+        <span class='moinsFonce'>&lt;ul&gt;</span>
+            <span class='stabilo three'>
+            &lt;li class="active"&gt;&lt;a href="#"&gt;Item one&lt;/a&gt;&lt;/li&gt;
+            </span>
+            <span class='moinsFonce'>  &lt;li&gt;&lt;a href="#"&gt;Item two&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Item three&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;</span>
+    </code> 
+                </pre>
+
+                </div>
+                <div class='droite'>
+                    <h5>Explication&nbsp;</h5>
+                    <p>
+                        La class active est attribué a la premier liste pour le premier affichage de nos menus comme active lien.
+                    </p>
+                </div>
+
+            </div>
+            <h3>4. Code CSS du menu</h3>
+
+            <div class='conteneurExplication'>
+                <div class='gauche'>
+
+
+                    <pre>
+                <code>  
+    <span class='stabilo'>   
+    #navcontainer ul {
+        padding-left: 0;
+        white-space: nowrap;
+    }
+
+    #navcontainer ul li {
+        display: inline;
+        list-style-type: none;
+        
+    }
+
+    #navcontainer ul a {
+        padding: 3px 10px;
+    }  
+    </span>            
+                </code> 
+            </pre>
+                </div>
+                <div class='droite'>
+                    <h5>Explication&nbsp;</h5>
+                    <p>
+                        Dans cet etape &lt;ul&gt; avec ID navcontainer on a mis sans padding et white-space: nowrap pour pouvoir mettre tous nos menus en une seule ligne.<br> Les &lt;li&gt; sont mis a display: inline pour s'afficher sur une ligne et sans
+                        puce avec l'option list-style-type: none.<br> Les balises &lt;a&gt; sont mis avec un padding haut et bas de 3px et gauche et droite de 10px.
+
+                    </p>
+                </div>
+
+            </div>
+
+            <h3>5. Code CSS du block</h3>
+            <div class='conteneurExplication'>
+                <div class='gauche'>
+
+                    <pre>
+    <code> 
+    <span class='stabilo'>    
+    pre {
+        margin: 0px 5px 15px 5px;
+        background-color: var(--bgcol-pre);
+        border: 1px #fff solid;
+        border-radius: 10px;
+        padding: 5px 20px 5px 5px;
+    }
+    
+    pre .moinsFonce {
+        color: var(--disabledfont);
+    }  
+    </span>          
+    </code> 
+                </pre>
+                </div>
+                <div class='droite'>
+                    <h5>Explication&nbsp;</h5>
+                    <p>
+                        Dans cette etape les balise &lt;code&gt; est mis dans notre balise &lt;pre&gt; et a donne un margin haut de 0px, droit de 5px, bas de 15px et gauche de 5px.<br> Un bordeur pour notre block de code with un epessieur de 1px solid
+                        et en noir. <br> En suite les coins de notre bordeur est aroundi un peu a l'aide de border-radius.
+                        <br> Les paddings attribué sont haut de 5px, droit de 20px, bas de 5px et gauche de 5px.
+                    </p>
+                </div>
+
+            </div>
+    </section>
+
+
+</body>
+
+</html>

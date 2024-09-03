@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="css/css.css" />
+
+    <title>Conteneur</title>
+</head>
+<body>
+    <div id='etiquette'>Toto</div>
+
+    <section id='conteneur_sec'>
+        <article>
+            <h2 class='titre'>&lt;div&gt;</h2>
+            <div class='definition'>L'élément HTML <b>&lt;div&gt;</b>(ou division) est le conteneur générique du contenu du flux. Il n'a aucun effet sur le contenu ou la mise en page tant qu'il n'est pas mis en forme d'une manière quelconque à l'aide de CSS.
+            </div>
+            <div class='utilisation'>L'élément HTML <b>&lt;div&gt;</b> est utilisée comme un conteneur pour les éléments HTML, qui sont ensuite stylisés avec CSS ou manipulés avec JavaScript. Et facilement stylisée à l'aide de l'attribut class ou id </div>
+            <div class='code html'>
+
+                <span class='balise chope'>&lt;div class="warning"&gt;</span><br>
+                    <div class='tab'></div><span class='autreBalise'>&lt;img src="https://picfiles.alphacoders.com/270/270596.jpg"  alt="An intimidating leopard."&gt;</span><br>
+                    <div class='tab'></div><span class='autreBalise'>&lt;p&gt;</span>Beware of the leopard<span class='autreBalise'>&lt;/p&gt;</span><br>
+                <span class='balise chope'>&lt;/div&gt;</span>
+
+            </div>
+        
+            <div class='exemple'>
+                <div class="warning">
+                    <img src="https://picfiles.alphacoders.com/270/270596.jpg" alt="An intimidating leopard." width="100">
+                    <p>Beware of the leopard</p>
+                </div>
+                
+            </div>
+        </article>
+
+        <article>
+            <h2 class='titre'>&lt;section&gt;</h2>
+            <div class='definition'>L'élément HTML <b>&lt;section&gt;</b> représente une section générique d'un document, par exemple un groupe de contenu thématique. Une section commence généralement avec un titre. </div>
+            <div class='utilisation'>Chaque élément <b>&lt;section&gt;</b> devrait être identifié, généralement grâce à un élément de titre (&lt;h1&gt;-&lt;h6&gt;) qui est un élément fils de l'élément <b>&lt;section&gt;.</b>
+                S'il est plus pertinent que le contenu soit à part, on utilisera l'élément &lt;article&gt;.
+                L'élément <b>&lt;section&gt;</b> ne doit pas être utilisé comme un conteneur générique : c'est le rôle de &lt;div&gt;, notamment lorsque le sectionnement du contenu sert uniquement la mise en forme. Pour savoir lequel utiliser, on peut se demander si la section doit apparaître sur le plan du document : si oui, on utilisera <b>&lt;section&gt;</b>, sinon, &lt;div&gt;.
+            </div>
+            <div class='code html'>
+                <span class='autreBalise'>&lt;h1&gt;</span>Choosing an Apple<span class='autreBalise'>&lt;/h1&gt;</span><br>
+                <span class='balise chope'>&lt;section&gt;</span><br>
+                    <div class='tab'></div><span class='autreBalise'>&lt;h2&gt;</span>Introduction<span class='autreBalise'>&lt;/h2&gt;</span><br>
+                    <div class='tab'></div><span class='autreBalise'>&lt;p&gt;</span>This document provides a guide to help with the important task of choosing the correct Apple.<span class='autreBalise'>&lt;/p&gt;</span><br>
+                <span class='balise chope'>&lt;/section&gt;</span>
+            </div>
+        
+            <div class='exemple'>
+                <h1>Choosing an Apple</h1>
+                <section>
+                    <h2>Introduction</h2>
+                    <p>This document provides a guide to help with the important task of choosing the correct Apple.</p>
+                </section>
+                
+            </div>
+        </article>
+
+        <article>
+           
+            <h2 class='titre'>&lt;article&gt;</h2>
+            <div class='definition'>L'élément <b>&lt;article&gt;</b> représente une composition autonome dans un document, une page, une application ou un site, 
+                destinée à être distribuée ou réutilisée de manière indépendante (par exemple, dans le cadre d'une syndication). Exemples : un message de forum, 
+                un article de magazine ou de journal, ou un article de blog, une fiche produit, un commentaire soumis par un utilisateur, un widget ou gadget interactif, 
+                ou tout autre élément de contenu indépendant.
+            </div>
+            <div class='utilisation'>Chaque <b>&lt;article&gt;</b> autonome, qui n'est pas imbriqué dans un autre élément <b>&lt;article&gt;</b>,
+                 devrait être identifié typiquement, en incluant un élément de titre &lt;h1&gt; à &lt;h6&gt;.
+            </div>
+            <div class='code html'>
+                <span class='autreBalise'>&lt;section class="forecast"&gt;</span><br>
+                    <div class='tab'></div><span class='autreBalise'>&lt;h1&gt;</span>Weather forecast for Seattle<span class='autreBalise'>&lt;/h1&gt;</span><br>
+                    <div class='tab'></div><span class='balise chope'>&lt;article class="day-forecast"&gt;</span><br>
+                        <div class='tab2'></div><span class='autreBalise'>&lt;h2&gt;</span>03 March 2018<span class='autreBalise'>&lt;/h2&gt;</span><br>
+                        <div class='tab2'></div><span class='autreBalise'>&lt;p&gt;</span>Rain.<span class='autreBalise'>&lt;/p&gt;</span><br>
+                    <div class='tab'></div><span class='balise chope'>&lt;/article&gt;</span><br>
+                    <div class='tab'></div><span class='balise chope'>&lt;article class="forecast"&gt;</span><br>
+                        <div class='tab2'></div><span class='autreBalise'>&lt;h2&gt;</span>04 March 2018<span class='autreBalise'>&lt;/h2&gt;</span><br>
+                        <div class='tab2'></div><span class='autreBalise'>&lt;p&gt;</span>Periods of rain.<span class='autreBalise'>&lt;/p&gt;</span><br>
+                    <div class='tab'></div><span class='balise chope'>&lt;/article&gt;</span><br>
+                <span class='autreBalise'>&lt;/section&gt;</span><br>
+            </div>
+        
+            <div class='exemple'>
+                <section class="forecast">
+                    <h1>Weather forecast for Seattle</h1>
+                    <article class="day-forecast">
+                        <h2>03 March 2018</h2>
+                        <p>Rain.</p>
+                    </article>
+                    <article class="day-forecast">
+                        <h2>04 March 2018</h2>
+                        <p>Periods of rain.</p>
+                    </article>
+                </section>
+                
+            </div>
+        </article>
+
+        <article>
+           
+            <h2 class='titre'>&lt;header&gt;</h2>
+            <div class='definition'>L'élément HTML <b>&lt;header&gt;</b> représente un groupe de contenu introductif ou de contenu aidant à la navigation. Il peut contenir des éléments de titre, mais aussi d'autres éléments tels qu'un logo, un formulaire de recherche, etc.
+            </div>
+            <div class='utilisation'>L'élément <b>&lt;header&gt;</b> n'est pas une section de contenu et n'introduit donc pas de nouvelle section dans ls structure. Cela dit, un élément <b>&lt;header&gt;</b> est généralement destiné à contenir l'en-tête de la section environnante (un élément h1-h6), mais ce n'est pas obligatoire.
+            </div>
+            <div class='code html'>
+                <span class='balise chope'>&lt;header&gt;</span><br>
+                    <div class='tab'></div><span class='autreBalise'>&lt;h1&gt;</span>Cute Puppies Express!<span class='autreBalise'>&lt;/h1&gt;</span><br>
+                <span class='balise chope'>&lt;/header&gt;</span><br>
+                
+                <span class='autreBalise'>&lt;main&gt;</span><br>
+                    <div class='tab'></div><span class='autreBalise'>&lt;p&gt;</span>I love beagles <span class='autreBalise'>&lt;em&gt;</span>so<span class='autreBalise'>&lt;/em&gt;</span> much! Like, really, a lot. They’re adorable and their ears are so, so snuggly soft!<span class='autreBalise'>&lt;/p&gt;</span><br>
+                <span class='autreBalise'>&lt;/main&gt;</span><br>
+            </div>
+        
+            <div class='exemple'>
+                <header>
+                    <h1>Cute Puppies Express!</h1>
+                </header>
+                
+                <main>
+                    <p>I love beagles <em>so</em> much! Like, really, a lot. They’re adorable and their ears are so, so snuggly soft!</p>
+                </main>
+            </div>
+        </article>
+    </section>
+
+    <script src='js/etiquette.js'></script>
+
+</body>
+</html>
